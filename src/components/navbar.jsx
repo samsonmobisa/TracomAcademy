@@ -23,6 +23,11 @@ const Navbar = () => {
 
 					<h3>Contact</h3>
 				</NavLink>
+				<NavLink
+					to={"/users"}>
+
+					<h3>Users</h3>
+				</NavLink>
 
 
 
