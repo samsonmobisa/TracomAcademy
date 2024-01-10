@@ -1,7 +1,9 @@
-import React, { useRef } from 'react'
+import React, { useContext, useRef } from 'react'
 import useLocalStorage from '../../hooks/useLocalStorage'
+import { userDetailsContext } from '../../context/userDetailsContext';
 
 function Contact() {
+	const currentPerson = useContext(userDetailsContext)
 	const { handleSaveToLocalStorage, name } = useLocalStorage();
 	const nameRef = useRef()
 	const emailRef = useRef()
@@ -21,6 +23,7 @@ function Contact() {
 
 	return (
 		<div>
+			<span>This is the current person: {currentPerson}</span>
 			<form onSubmit={handleSubmit}>
 				<div style={{ display: "flex", flexDirection: "column", width: 500, margin: "0 auto", gap: '2em' }}>
 					<label htmlFor="">Name</label>

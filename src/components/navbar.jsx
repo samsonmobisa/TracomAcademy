@@ -3,6 +3,10 @@ import { NavLink } from 'react-router-dom'
 
 
 const Navbar = () => {
+	function handleCLick() {
+		localStorage.setItem("isLoggedIn", "false")
+
+	}
 	return (
 		<div style={{ display: "flex", justifyContent: "space-between " }}>
 
@@ -28,6 +32,15 @@ const Navbar = () => {
 
 					<h3>Users</h3>
 				</NavLink>
+				<NavLink
+					to={"/login"}
+					onClick={() => handleCLick()}
+				>
+
+					<h3>LogOut</h3>
+
+				</NavLink>
+
 
 
 
